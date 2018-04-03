@@ -1,0 +1,11 @@
+ else if(qntAlg(a) != qntAlg(b)){
+       
+                }
+		return a + b + 2;
+	}
+        public int qntAlg(int a){
+            String numero = Integer.toString(a);
+            int qnt = numero.length();
+            return qnt;
+            
+        }
