@@ -10,12 +10,12 @@ import javax.swing.ImageIcon;
 
 public class Coelho {
 
-	private int x, y;
-	private int dx, dy;
+	private int x, y;//coordenadas
+	private int dx, dy;//aumentar ou diminuir p cda coordenada
 	private int altura, largura;
 	private boolean isVisivel;
 
-	private Image imagem;
+	private Image imagem; 
 	
 	//private List<Missel> misseis;
 	
@@ -27,15 +27,14 @@ public class Coelho {
 		altura = imagem.getHeight(null);
 		largura = imagem.getWidth(null);
 		
-		//misseis = new ArrayList<Missel>();
-		
+	
+		//onde o coelho vai ficar na tela
 		this.x = 100;
 		this.y = 100;
 		
 	}
 	
 	public void mexer(){
-
 		x += dx; // 1 e 462
 		y += dy; // 1 e 340
 
@@ -43,20 +42,20 @@ public class Coelho {
 			x = 1;
 		}
 		
-		if(this.x > 462){
-			x = 462;
+		if(this.x > 430){
+			x = 430;
 		}
 		
 		if(this.y < 1){
 			y = 1;
 		}
 
-		if(this.y > 340){
-			y = 340;
+		if(this.y > 310){
+			y = 310;
 		}
 		
 	}
-	
+	//
 	/*public List<Missel> getMisseis() {
 		return misseis;
 	}*/
@@ -71,6 +70,11 @@ public class Coelho {
 	
 	public Image getImagem() {
 		return imagem;
+	}
+	
+
+	public void setImagem(Image imagem) {
+		this.imagem = imagem;
 	}
 
 	public boolean isVisivel() {
@@ -90,7 +94,7 @@ public class Coelho {
 	}
 	
 	
-	public void keyPressed(KeyEvent tecla){
+	public void keyPressed(KeyEvent tecla){//aperta na teclaa
 		
 		int codigo = tecla.getKeyCode();
 		
@@ -99,7 +103,7 @@ public class Coelho {
 		}*/
 
 		if(codigo == KeyEvent.VK_UP){
-			dy = -1;
+			dy = -1;// quando menor o y ele sobre, o coelho sobre devagar pq ta -1
 		}
 		
 		if(codigo == KeyEvent.VK_DOWN){
@@ -116,12 +120,12 @@ public class Coelho {
 		
 	}
 	
-	public void keyReleased(KeyEvent tecla){
+	public void keyReleased(KeyEvent tecla){ //solta a tela
 		
-		int codigo = tecla.getKeyCode();
+		int codigo = tecla.getKeyCode(); // recebe o codigo da tabela asc, armazena e sabe qual tecla o usuario apertou 
 		
 		if(codigo == KeyEvent.VK_UP){
-			dy = 0;
+			dy = 0;// pq qnd solta a tecla tem q anular o valor q recebeu no heypressed
 		}
  
 		if(codigo == KeyEvent.VK_DOWN){

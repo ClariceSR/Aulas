@@ -15,13 +15,13 @@ public class Game extends JFrame{
 	
 	public Game(){
 	
-		add(new JogoEspaco());
-		setTitle("Meu Primeiro Jogo");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(500,420);
-		setLocationRelativeTo(null);
-		setResizable(false);
-		setVisible(true);
+		add(new JogoCoelho());
+		setTitle("Joguinho Coelho vs Raposa");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// fecha a janela qnd o usuario clicar no x
+		setSize(511,372);// largura e altura
+		setLocationRelativeTo(null);//aonde a janela aprece, colocando null fica no meio da tela
+		setResizable(false);// o usuario nao redimeciona minimiza maximiza 
+		setVisible(true);//aparecer a janela
 		
 	}
 	
